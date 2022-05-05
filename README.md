@@ -4,50 +4,50 @@ UnityProjects4
 
 Requirements
 
-Character Movement    Done
+Character Movement    [Done]
 
---Add diagonal run    Pending // David
+--Add diagonal run    [Pending] // David
 
---LedgeGrab           Pending
+--LedgeGrab           [Pending]
 
-Levels                Pending // David
+Levels                [Pending] // David
 
---Rng generator       Pending // David
+--Rng generator       [Pending] // David
 
-JumpPads              Pending // David
+JumpPads              [Pending] // David
 
-Turrets               Done
+Turrets               [Done]
 
-Timer                 Pending
+Timer                 [Pending]
 
-Coins                 Pending
+Coins                 [Pending]
 
-Healh                 Pending
+Healh                 [Pending]
 
-Interfaces            Pending
+Interfaces            [Pending]
 
---Apply Interfaces    Pending
+--Apply Interfaces    [Pending]
 
-Shop                  Pending
+Shop                  [Pending]
 
-Upgrades/Unlocks      Pending
+Upgrades/Unlocks      [Pending]
 
---Double Jump         Pending
+--Double Jump         [Pending]
 
---Teleport            Pending
+--Teleport            [Pending]
 
---Gain MaxLife        Pending
+--Gain MaxLife        [Pending]
 
---More Bounce Power   Pending
+--More Bounce Power   [Pending]
 
---More AirSpeed       Pending
+--More AirSpeed       [Pending]
 
---More MovementSpeed  Pending
+--More MovementSpeed  [Pending]
 
---Add Time            Pending
+--Add Time            [Pending]
 
---Heal                Pending
+--Heal                [Pending]
 
---Buy Coins           Pending
+--Buy Coins           [Pending]
 
-GDD                   Pending
+GDD                   [Pending]
