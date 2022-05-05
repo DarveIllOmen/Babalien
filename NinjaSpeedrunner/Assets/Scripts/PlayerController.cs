@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private float airSpeed;
     [SerializeField]
     private float jumpsSpeed;
+    [SerializeField]
+    private float jumpPadStrength;
 
     [SerializeField]
     private float gravity;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isJumping;
     private bool isGrounded;
+    private bool isOnJumpad;
 
     private CharacterController _charCtrl;
     private Animator _animCtrl;
@@ -41,13 +44,14 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-
+        //Reduce the speed while shifting
         if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             horizontalInput *= 0.75f;
             verticalInput *= 0.75f;
         }
 
+        //direction of the movement
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
         if (direction.magnitude > 1)
         {
@@ -72,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (Time.time - groundPress <= gracePeriod)
         {
-            ySpeed = -0.5f;
+            ySpeed = -1.5f;
 
             _charCtrl.stepOffset = stepOffset;
 
@@ -81,6 +85,7 @@ public class PlayerController : MonoBehaviour
             _animCtrl.SetBool("isJumping", false);
             isJumping = false;
             _animCtrl.SetBool("isFalling", false);
+            _animCtrl.SetBool("isOnJumpPad", false);
 
             if (Time.time - jumpPress <= gracePeriod)
             {
@@ -106,6 +111,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (isOnJumpad)
+        {
+            ySpeed = jumpPadStrength;
+
+            jumpPress = null;
+            groundPress = null;
+
+            _animCtrl.SetBool("isFalling", true);
+
+            isOnJumpad = false;
+        }
+
         if(direction != Vector3.zero)
         {
             _animCtrl.SetBool("isMoving", true);
@@ -122,6 +139,12 @@ public class PlayerController : MonoBehaviour
 
             _charCtrl.Move(velocity * Time.deltaTime);
         }
+    }
+
+    public void JumpPad()
+    {
+        isOnJumpad = true;
+        _animCtrl.SetBool("isOnJumpPad", true);
     }
 
     private void OnAnimatorMove()

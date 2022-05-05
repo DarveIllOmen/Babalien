@@ -6,7 +6,7 @@ Requirements
 
 Character Movement    [Done]
 
---Add diagonal run    [Pending] // David
+--Add diagonal run    [Done]
 
 --LedgeGrab           [Pending]
 
@@ -14,7 +14,7 @@ Levels                [Pending] // David
 
 --Rng generator       [Pending] // David
 
-JumpPads              [Pending] // David
+JumpPads              [Done]
 
 Turrets               [Done]
 
